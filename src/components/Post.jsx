@@ -1,4 +1,5 @@
 import React from 'react'
+import { Comment } from './Comment'
 import styles from './Post.module.css'
 
 const imageProfile = 'https://avatars.githubusercontent.com/u/5342280?v=4'
@@ -39,6 +40,12 @@ export function Post() {
         </footer>
 
       </form>
+
+      <div className={styles.commentList}>
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
 
     </article>
   )
