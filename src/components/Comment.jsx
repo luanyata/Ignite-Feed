@@ -5,7 +5,7 @@ import styles from './Comment.module.css'
 
 const imageProfile = 'https://avatars.githubusercontent.com/u/5342280?v=4'
 
-export function Comment() {
+export function Comment({ comment }) {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src={imageProfile} />
@@ -23,7 +23,7 @@ export function Comment() {
             </button>
           </header>
 
-          <p>Muito bom Luan, Parabens 👋👋</p>
+          <p>{comment}</p>
         </div>
 
         <footer>
