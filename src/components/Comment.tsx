@@ -5,7 +5,12 @@ import styles from './Comment.module.css'
 
 const imageProfile = 'https://avatars.githubusercontent.com/u/5342280?v=4'
 
-export function Comment({ comment, onDeleteComment }) {
+type CommentProps = {
+  comment: string
+  onDeleteComment: (comment: string) => void
+}
+
+export function Comment({ comment, onDeleteComment }: CommentProps) {
 
   const [likeCount, setLikeCount] = useState(0)
 
