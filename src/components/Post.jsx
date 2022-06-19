@@ -26,6 +26,9 @@ export function Post({ post }) {
 
   }
 
+  function handleNewCommentInvalid() {
+  }
+
   function handleNewCommentTextChange() {
     setNewCommentText(event.target.value)
   }
@@ -34,6 +37,8 @@ export function Post({ post }) {
     const commentsWithoutDeleted = comments.filter(c => c !== comment)
     setComments(commentsWithoutDeleted)
   }
+
+  const isNewCOmmentEmpty = newCommentText.trim().length === 0
 
   return (
     <article className={styles.post}>
@@ -66,10 +71,12 @@ export function Post({ post }) {
           value={newCommentText}
           onChange={handleNewCommentTextChange}
           placeholder='Deixe um comentario'
+          onInvalid={handleNewCommentInvalid}
+          required
         />
 
         <footer>
-          <button type="submit">
+          <button type="submit" disabled={isNewCOmmentEmpty}>
             Publicar
           </button>
         </footer>
